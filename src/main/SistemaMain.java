@@ -22,6 +22,12 @@ public class SistemaMain {
         produtoService.adicionarProdutos("Headset",  500, 15);
 
 
+       produtoService.listarProdutos();
+       produtoService.valorProdutosSeparadamente();
+       produtoService.valorTotalEstoque();
+       produtoService.buscaPorId(3);
+       produtoService.buscarPorNome("tableti");
+
 
         sc.close();
     }

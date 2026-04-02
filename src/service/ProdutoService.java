@@ -36,7 +36,6 @@ public class ProdutoService {
             return;
         }
 
-
         for (int i = 0; i < posicaoProduto; i++) {
             System.out.printf(
                     "ID: %03d | %-10s | R$ %8.2f | Qtd: %3d%n",
@@ -66,7 +65,6 @@ public class ProdutoService {
         System.out.println("Valor total do estoque: " + total);
     }
 
-
     public void valorProdutosSeparadamente() {
 
         if (posicaoProduto == 0) {
@@ -88,4 +86,65 @@ public class ProdutoService {
         System.out.println("------------------------------");
 
     }
+
+    public void buscarPorNome(String buscarNome){
+
+        for (int i = 0; i < posicaoProduto; i++){
+            if (estoque[i].nome.equalsIgnoreCase(buscarNome)){
+                System.out.println("\n✅ Produto encontrado!");
+                System.out.println("------------------------------");
+                System.out.println("📦 DETALHES DO PRODUTO");
+                System.out.println("------------------------------");
+
+                System.out.printf("ID: %03d%n", estoque[i].ID);
+                System.out.printf("Produto: %s%n", estoque[i].nome);
+                System.out.printf("Preço: R$ %.2f%n", estoque[i].valor);
+                System.out.printf("Quantidade: %d%n", estoque[i].quantidade);
+
+                double total = estoque[i].valor * estoque[i].quantidade;
+                System.out.printf("Valor total em estoque: R$ %.2f%n", total);
+
+                System.out.println("------------------------------");
+                return;
+            }
+        }
+        System.out.println("\n❌ Produto não encontrado.");
+    }
+
+
+    public void buscaPorId(int buscarId){
+
+    for (int i = 0; i < posicaoProduto; i++){
+
+        if (estoque[i].ID == buscarId){
+            System.out.println("\n✅ Produto encontrado!");
+            System.out.println("------------------------------");
+            System.out.println("📦 DETALHES DO PRODUTO");
+            System.out.println("------------------------------");
+
+            System.out.printf("ID: %03d%n", estoque[i].ID);
+            System.out.printf("Produto: %s%n", estoque[i].nome);
+            System.out.printf("Preço: R$ %.2f%n", estoque[i].valor);
+            System.out.printf("Quantidade: %d%n", estoque[i].quantidade);
+
+            double total = estoque[i].valor * estoque[i].quantidade;
+            System.out.printf("Valor total em estoque: R$ %.2f%n", total);
+
+            System.out.println("------------------------------");
+            return;
+        }
+
+    }
+        System.out.println("\n❌ Produto não encontrado.");
+
+
+    }
+
+
+
+
+
+
+
+
 }
