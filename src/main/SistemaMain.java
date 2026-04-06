@@ -16,8 +16,11 @@ public class SistemaMain {
 
         int opcao = 7;
         String nomeProduto = null;
+        String nomeBusca = null;
         double valorProduto = 0;
         int quantidadeProduto = 0;
+        int ID = 0;
+        int buscarId = 0;
         String voltarMenuPrincipal = null;
 
         while (opcao != 0){
@@ -58,23 +61,33 @@ public class SistemaMain {
                     System.out.println();
                     break;
                 case 3:
-                    System.out.println("...");
+                    System.out.print("Digite o ID do poduto: ");
+                    ID = sc.nextInt();
+                    sc.nextLine();
+                    produtoService.buscaPorId(ID);
                     break;
                 case 4:
-                    System.out.println("...");
+                    System.out.print("Digite o nome do produto: ");
+                    nomeBusca = sc.nextLine();
+                    produtoService.buscarPorNome(nomeBusca);
+
                     break;
                 case 5:
-                    System.out.println("...");
+                    System.out.print("Digite o id do produto: ");
+                    buscarId = sc.nextInt();
+                    sc.nextLine();
+                    produtoService.removerProdutoPorId(buscarId);
                     break;
                 case 6:
-                    System.out.println("...");
+                    produtoService.valorTotalEstoque();
+                    System.out.println();
                     break;
                 case 7:
-                    System.out.println("...");
+                    produtoService.valorProdutosSeparadamente();
+                    System.out.println();
                     break;
-                case 8:
+                case 0:
                     System.out.println("Saindo...");
-                    break;
                 default:
                     System.out.println("Escolha uma opção valida!");
                     break;
@@ -83,13 +96,6 @@ public class SistemaMain {
             }
 
         }
-
-
-
-
-
-
-
 
         sc.close();
     }

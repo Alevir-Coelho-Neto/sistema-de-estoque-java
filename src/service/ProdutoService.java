@@ -1,5 +1,8 @@
 package service;
 
+import javax.sound.midi.Soundbank;
+import java.text.BreakIterator;
+
 public class ProdutoService {
 
     Produto[] estoque = new Produto[10];
@@ -46,6 +49,32 @@ public class ProdutoService {
             );
 
         }
+    }
+
+    public void removerProdutoPorId(int idProdutoRemover){
+        int idEncontrado = -1;
+
+        for(int i = 0; i < posicaoProduto; i++){
+            if (estoque[i].ID == idProdutoRemover){
+                idEncontrado = i;
+                break;
+            }
+        }
+
+        if(idEncontrado == -1){
+            System.out.println("produto não encontrado!");
+            return;
+        }
+
+        for(int i = idEncontrado; i < posicaoProduto - 1; i++){
+            estoque[i] = estoque[i + 1];
+        }
+
+        estoque[posicaoProduto - 1] = null;
+        posicaoProduto--;
+
+        System.out.println("Produto removido com sucesso! ");
+
     }
 
     public void valorTotalEstoque() {
@@ -139,11 +168,6 @@ public class ProdutoService {
 
 
     }
-
-
-
-
-
 
 
 
