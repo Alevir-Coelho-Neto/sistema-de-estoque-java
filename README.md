@@ -1,18 +1,22 @@
 # 📦 Sistema de Estoque em Java
 
-Sistema de controle de estoque desenvolvido em Java com foco em prática de lógica de programação e fundamentos de orientação a objetos.
+> Sistema de controle de estoque desenvolvido em Java puro, com foco em boas práticas de organização de código e orientação a objetos.
 
-Este projeto faz parte do meu processo de evolução como desenvolvedor, onde busco transformar conceitos teóricos em aplicações práticas.
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow?style=for-the-badge)
 
 ---
 
-## 🚀 Funcionalidades atuais
+## 🚀 Funcionalidades
 
-* ✅ Cadastro de produtos (nome, preço e quantidade)
-* 📋 Listagem de produtos cadastrados
-* 💰 Cálculo do valor total do estoque
-* 📊 Cálculo do valor total por produto
-* ⚠️ Validação de dados (valores inválidos e limite de estoque)
+* ✅ Cadastro de produtos com nome, preço e quantidade
+* ✅ Listagem de todos os produtos cadastrados
+* ✅ Busca de produto por ID
+* ✅ Busca de produto por nome
+* ✅ Remoção de produto por ID
+* ✅ Cálculo do valor total do estoque
+* ✅ Cálculo do valor total por produto
+* ✅ Validações de entrada (duplicados, valores inválidos, limite de estoque)
 
 ---
 
@@ -29,7 +33,7 @@ Este projeto faz parte do meu processo de evolução como desenvolvedor, onde bu
 
 ## 🛠️ Tecnologias
 
-* Java
+* Java 17+
 
 ---
 
@@ -38,10 +42,10 @@ Este projeto faz parte do meu processo de evolução como desenvolvedor, onde bu
 ```
 src/
  ├── main/
- │    └── SistemaMain.java
+ │    └── SistemaMain.java #Ponto de entrada e interface com usuário
  └── service/
-      ├── Produto.java
-      └── ProdutoService.java
+      ├── Produto.java  # Modelo de dados
+      └── ProdutoService.java  # Regras de negócio
 ```
 
 ---
@@ -54,15 +58,13 @@ Este projeto foi criado com o objetivo de consolidar fundamentos essenciais da p
 
 ## 🚧 Próximas melhorias (Roadmap)
 
-* 🔍 Buscar produto pelo nome
-* 🔁 Evitar produtos duplicados (atualizar quantidade automaticamente)
-* ✏️ Atualizar dados de um produto existente
-* ❌ Remover produtos do estoque
-* 🏆 Identificar produto mais caro e mais barato
-* 📦 Melhorar estrutura de dados (substituir array por listas no futuro)
-* 💾 Persistência de dados (salvar informações em arquivo ou banco de dados)
-* 🖥️ Criar interface interativa com o usuário (Scanner ou menu)
-* 🌐 Evoluir para API (Spring Boot futuramente)
+- [ ] Encapsulamento completo com getters e setters
+- [ ] Substituição de arrays por Collections (ArrayList)
+- [ ] Atualização de dados de um produto existente
+- [ ] Identificar produto mais caro e mais barato
+- [ ] Persistência de dados com banco de dados (MySQL)
+- [ ] API REST com Spring Boot
+- [ ] Autenticação e controle de acesso
 
 ---
 
